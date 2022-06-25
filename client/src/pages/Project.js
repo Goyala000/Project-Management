@@ -5,6 +5,7 @@ import { GET_PROJECT } from "../queries/projectQueries";
 import Spinner from "../components/Spinner";
 import ClientInfo from "../components/ClientInfo";
 import DeleteProjectBtn from "../components/DeleteProjectBtn";
+import EditProjectForm from "../components/EditProjectForm";
 
 export default function Project() {
   const { id } = useParams();
@@ -29,6 +30,8 @@ export default function Project() {
           <p className="lead">{data.project.status}</p>
 
           <ClientInfo client={data.project.client} />
+
+          <EditProjectForm project={data.project} />
 
           <DeleteProjectBtn projectId={data.project.id} />
         </div>
